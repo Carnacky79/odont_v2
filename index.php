@@ -634,6 +634,13 @@
                                 <label class="custom-control-label" for="pilot16">Pilot 16</label>
                             </div>
                         </div>
+                        <div class="form-row" id="reset-pilot">
+                            <div class="col custom-control-inline"
+                                 style="justify-content: center; margin-right: 0; margin-top: 20px;">
+                                <button type="button" class="btn-outline-info" id="btn-pilot" onclick="resetCheck('pilot', this)">Reset Pilot</button>
+                            </div>
+                        </div>
+
                     </fieldset>
 
                     <fieldset style="border: 1px solid dodgerblue; padding-bottom: 25px">
@@ -768,6 +775,12 @@
                                 <input class="custom-control-input" type="checkbox" id="gttd-4510" name="tip"
                                        value="10">
                                 <label class="custom-control-label" for="gttd-4510">GTTD-4510</label>
+                            </div>
+                        </div>
+                        <div class="form-row" id="reset-tip">
+                            <div class="col custom-control-inline"
+                                 style="justify-content: center; margin-right: 0; margin-top: 20px;">
+                                <button type="button" class="btn-outline-info" id="btn-tip" onclick="resetCheck('tip', this)">Reset Tip</button>
                             </div>
                         </div>
                     </fieldset>
@@ -906,6 +919,12 @@
                                 <label class="custom-control-label" for="gtd-4510">GTD-4510</label>
                             </div>
                         </div>
+                        <div class="form-row" id="reset-final10">
+                            <div class="col custom-control-inline"
+                                 style="justify-content: center; margin-right: 0; margin-top: 20px;">
+                                <button type="button" class="btn-outline-info" id="btn-final10" onclick="resetCheck('final10', this)">Reset Final 10</button>
+                            </div>
+                        </div>
                     </fieldset>
                     <fieldset style="border: 1px solid dodgerblue; padding-bottom: 25px">
                         <legend style="width: auto">Final 16mm</legend>
@@ -1040,6 +1059,12 @@
                                 <input class="custom-control-input" type="checkbox" name="final16" value="3816"
                                        id="gtd-3816">
                                 <label class="custom-control-label" for="gtd-3816">GTD-3816</label>
+                            </div>
+                        </div>
+                        <div class="form-row" id="reset-final16">
+                            <div class="col custom-control-inline"
+                                 style="justify-content: center; margin-right: 0; margin-top: 20px;">
+                                <button type="button" class="btn-outline-info" id="btn-final16" onclick="resetCheck('final16', this)">Reset Final 16</button>
                             </div>
                         </div>
                     </fieldset>
