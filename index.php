@@ -1068,6 +1068,59 @@
                             </div>
                         </div>
                     </fieldset>
+                    <fieldset style="border: 1px solid dodgerblue; padding-bottom: 25px">
+                        <legend style="width: auto">MOUNT</legend>
+                        <div class="form-row ">
+
+
+                            <div class="col-12 custom-control-inline custom-control custom-switch" style="justify-content: center; margin-right: 0; margin-bottom: 20px;">
+                                <input type="checkbox" class="custom-control-input" id="mountToggle" name="mountToggle" value="1" onclick="toggleDis('mount', 4)">
+                                <label class="custom-control-label" for="mountToggle">MOUNT YES/NO</label>
+                            </div>
+
+                        </div>
+                        <div class="form-row ">
+
+                            <div class="col-lg-3 custom-control-inline custom-checkbox"
+                                 style="justify-content: center; margin-right: 0">
+                                <input class="custom-control-input" type="checkbox" name="mount" value="9"
+                                       id="mnt-9">
+                                <label class="custom-control-label" for="mnt-9">Mount 9</label>
+                            </div>
+
+
+                            <div class="col-lg-3 custom-control-inline custom-checkbox"
+                                 style="justify-content: center; margin-right: 0">
+                                <input class="custom-control-input" type="checkbox" name="mount" value="10"
+                                       id="mnt-10">
+                                <label class="custom-control-label" for="mnt-10">Mount 10</label>
+                            </div>
+
+
+                            <div class="col-lg-3 custom-control-inline custom-checkbox"
+                                 style="justify-content: center; margin-right: 0">
+                                <input class="custom-control-input" type="checkbox" name="mount" value="11"
+                                       id="mnt-11">
+                                <label class="custom-control-label" for="mnt-11">Mount 11</label>
+                            </div>
+
+                            <div class="col-lg-3 custom-control-inline custom-checkbox"
+                                 style="justify-content: center; margin-right: 0">
+                                <input class="custom-control-input" type="checkbox" name="mount" value="13"
+                                       id="mnt-9">
+                                <label class="custom-control-label" for="mnt-13">Mount 13</label>
+                            </div>
+
+
+
+                        </div>
+                        <div class="form-row" id="reset-mount">
+                            <div class="col custom-control-inline"
+                                 style="justify-content: center; margin-right: 0; margin-top: 20px;">
+                                <button type="button" class="btn-outline-info" id="btn-mount" onclick="resetCheck('mount', this)">Reset Mount</button>
+                            </div>
+                        </div>
+                    </fieldset>
 
                     <div class="btn-box">
                         <button type="submit" class="btn ">Invia</button>
