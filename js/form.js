@@ -30,19 +30,19 @@ $( document ).ready(function() {
         resetPilotsDiv.show();
     });
     tips.on("click", function(){
-        selectTips(tips);
+        selectTips(tips, $(this).attr('id'));
         resetTipsDiv.show();
     });
     final10.on("click", function(){
-        selectFinal(final10, 18);
+        selectFinal(final10, 18, $(this).attr('id'));
         resetFinal10Div.show();
     });
     final16.on("click", function(){
-        selectFinal(final16, 16);
+        selectFinal(final16, 16, $(this).attr('id'));
         resetFinal16Div.show();
     });
     mount.on("click", function(){
-        selectMount(mount);
+        selectMount(mount, $(this).attr('id'));
         resetMount.show();
     });
 });
@@ -52,9 +52,8 @@ function selectPilots(pilots, item){
     for(var i = 0; i < 6; i++){
         var compare = parseInt(pilots[i].value);
         var pilot = pilots[i];
-        if(compare < current){
+        if(compare <= current){
             pilot.checked = true;
-            pilot.disabled = true;
         }else{
             pilot.disabled = true;
         }
@@ -70,24 +69,37 @@ function toggleDis(stringa, num){
     }
 }
 
-function selectTips(tips){
+function selectTips(tips, item){
+    var current = item;
+
     for(var i = 0; i < 18; i++){
-        var tip = tips[i];
-        tip.disabled = true;
+        var compare = tips[i].getAttribute('id');
+        if(compare != current) {
+            var tip = tips[i];
+            tip.disabled = true;
+        }
     }
 }
 
-function selectMount(mounts){
+function selectMount(mounts, item){
+    var current = item;
     for(var i = 0; i < 4; i++){
-        var mount = mounts[i];
-        mount.disabled = true;
+        var compare = mounts[i].getAttribute('id');
+        if(compare != current) {
+            var mount = mounts[i];
+            mount.disabled = true;
+        }
     }
 }
 
 function selectFinal(finals, num){
+    var current = item;
     for(var i = 0; i < num; i++){
-        var final = finals[i];
-        final.disabled = true;
+        var compare = finals[i].getAttribute('id');
+        if(compare != current) {
+            var final = finals[i];
+            final.disabled = true;
+        }
     }
 }
 
