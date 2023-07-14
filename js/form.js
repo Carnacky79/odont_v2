@@ -14,7 +14,7 @@ $( document ).ready(function() {
     var resetMount = $("#reset-mount");
     resetMount.hide();
 
-    var pilots = $("input[name='pilot']");
+    var pilots = $("input[name='pilot[]']");
     var tips = $("input[name='tip']");
     var final10 = $("input[name='final10']");
     var final16 = $("input[name='final16']");
@@ -111,6 +111,8 @@ function resetCheck(stringa, e){
         item.disabled = false;
     });
 
+    if(stringa == "pilot[]")
+        stringa = "pilot";
     var resetDiv = $("#reset-"+stringa);
     resetDiv.hide();
 }

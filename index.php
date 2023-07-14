@@ -600,17 +600,17 @@
                         <div class="form-row ">
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
-                                <input class="custom-control-input" type="checkbox" id="pilot6" name="pilot" value="6">
+                                <input class="custom-control-input" type="checkbox" id="pilot6" name="pilot[]" value="6">
                                 <label class="custom-control-label" for="pilot6">Pilot 6</label>
                             </div>
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
-                                <input class="custom-control-input" type="checkbox" id="pilot8" name="pilot" value="8">
+                                <input class="custom-control-input" type="checkbox" id="pilot8" name="pilot[]" value="8">
                                 <label class="custom-control-label" for="pilot8">Pilot 8</label>
                             </div>
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
-                                <input class="custom-control-input" type="checkbox" id="pilot10" name="pilot"
+                                <input class="custom-control-input" type="checkbox" id="pilot10" name="pilot[]"
                                        value="10">
                                 <label class="custom-control-label" for="pilot10">Pilot 10</label>
                             </div>
@@ -618,26 +618,26 @@
                         <div class="form-row ">
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
-                                <input class="custom-control-input" type="checkbox" id="pilot12" name="pilot"
+                                <input class="custom-control-input" type="checkbox" id="pilot12" name="pilot[]"
                                        value="12">
                                 <label class="custom-control-label" for="pilot12">Pilot 12</label>
                             </div>
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
-                                <input class="custom-control-input" type="checkbox" id="pilot14" name="pilot"
+                                <input class="custom-control-input" type="checkbox" id="pilot14" name="pilot[]"
                                        value="14">
                                 <label class="custom-control-label" for="pilot14">Pilot 14</label>
                             </div>
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
-                                <input class="custom-control-input" type="checkbox" id="pilot16" name="pilot" value="16">
+                                <input class="custom-control-input" type="checkbox" id="pilot16" name="pilot[]" value="16">
                                 <label class="custom-control-label" for="pilot16">Pilot 16</label>
                             </div>
                         </div>
                         <div class="form-row" id="reset-pilot">
                             <div class="col custom-control-inline"
                                  style="justify-content: center; margin-right: 0; margin-top: 20px;">
-                                <button type="button" class="btn-outline-info" id="btn-pilot" onclick="resetCheck('pilot', this)">Reset Pilot</button>
+                                <button type="button" class="btn-outline-info" id="btn-pilot" onclick="resetCheck('pilot[]', this)">Reset Pilot</button>
                             </div>
                         </div>
 
