@@ -7,6 +7,10 @@ require __DIR__ . '/vendor/autoload.php';
  */
 use PHPImageWorkshop\ImageWorkshop;
 
+$lunghezza = $_REQUEST['lunghezza'];
+$impiantoPath = "img/impianto_" . $lunghezza . "@4x.png";
+$impiantoLayer = ImageWorkshop::initFromPath($impiantoPath);
+
 $offset = $_REQUEST['offset'];
 $offset = (int)$offset;
 
@@ -81,6 +85,7 @@ if($mountToggle == 1)
 
 $document->addLayer(4, $pilotGroup, 630, $pilotY);
 $document->addLayer(3, $layerOffset, 0, $offsetY);
+$document->addLayer(5, $impiantoLayer, 2193, 465);
 
 $image = $document->getResult("ffffff");
 
