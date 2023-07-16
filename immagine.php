@@ -54,21 +54,29 @@ switch($offset){
         $offsetPath = "img/Offset_9@4x.png";
         $offsetY = 230;
         $pilotY = 115;
+        $tissueY = 113;
+        $boneY = $startY = 112;
         break;
     case 10:
         $offsetPath = "img/Offset_10@4x.png";
         $offsetY = 207;
         $pilotY = 92;
+        $tissueY = 90;
+        $boneY = $startY = 89;
         break;
     case 11:
         $offsetPath = "img/Offset_11@4x.png";
         $offsetY = 184;
         $pilotY = 69;
+        $tissueY = 67;
+        $boneY = $startY = 66;
         break;
     case 13:
         $offsetPath = "img/Offset_13@4x.png";
         $offsetY = 139;
         $pilotY = 23;
+        $tissueY = 21;
+        $boneY = $startY = 20;
         break;
 }
 
@@ -79,13 +87,34 @@ $layerBase = ImageWorkshop::initFromPath("img/Schema_Base@4x.png");
 $layerOffset = ImageWorkshop::initFromPath($offsetPath);
 
 
-$document->addLayer(1, $layerBase);
+
+
+
+
 if($mountToggle == 1)
     $document->addLayer(2, $layerMount, 2180, 112);
 
 $document->addLayer(4, $pilotGroup, 630, $pilotY);
-$document->addLayer(3, $layerOffset, 0, $offsetY);
+
 $document->addLayer(5, $impiantoLayer, 2193, 465);
+
+if(isset($_REQUEST['tissue']) && $_REQUEST['tissue'] == 1) {
+    $tissueLayer = ImageWorkshop::initFromPath("img/PUNCH@4x.png");
+    $document->addLayer(6, $tissueLayer, 110, $tissueY);
+}
+
+if(isset($_REQUEST['bone']) && $_REQUEST['bone'] == 1) {
+    $boneLayer = ImageWorkshop::initFromPath("img/BONE_FLATTENER@4x.png");
+    $document->addLayer(7, $boneLayer, 275, $boneY);
+}
+
+if(isset($_REQUEST['start']) && $_REQUEST['start'] == 1) {
+    $startLayer = ImageWorkshop::initFromPath("img/START@4x.png");
+    $document->addLayer(7, $startLayer, 442, $startY);
+}
+
+$document->addLayer(10, $layerOffset, 0, $offsetY);
+$document->addLayer(20, $layerBase);
 
 $image = $document->getResult("ffffff");
 
