@@ -56,6 +56,7 @@ switch($offset){
         $pilotY = 115;
         $tissueY = 113;
         $boneY = $startY = 112;
+        $tipY = 18;
         break;
     case 10:
         $offsetPath = "img/Offset_10@4x.png";
@@ -63,6 +64,7 @@ switch($offset){
         $pilotY = 92;
         $tissueY = 90;
         $boneY = $startY = 89;
+        $tipY = -6;
         break;
     case 11:
         $offsetPath = "img/Offset_11@4x.png";
@@ -70,6 +72,7 @@ switch($offset){
         $pilotY = 69;
         $tissueY = 67;
         $boneY = $startY = 66;
+        $tipY = -27;
         break;
     case 13:
         $offsetPath = "img/Offset_13@4x.png";
@@ -77,6 +80,7 @@ switch($offset){
         $pilotY = 23;
         $tissueY = 21;
         $boneY = $startY = 20;
+        $tipY = -73;
         break;
 }
 
@@ -86,9 +90,19 @@ $layerBase = ImageWorkshop::initFromPath("img/Schema_Base@4x.png");
 
 $layerOffset = ImageWorkshop::initFromPath($offsetPath);
 
-
-
-
+$tip = $_REQUEST['tip'];
+$tip = (int)$tip;
+$tipLayer = ImageWorkshop::initFromPath("img/TIP@4x.png");
+switch ($tip){
+    case 6:
+        break;
+    case 8:
+        $tipY += 43;
+        break;
+    case 10:
+        $tipY += 88;
+        break;
+}
 
 
 if($mountToggle == 1)
@@ -112,6 +126,8 @@ if(isset($_REQUEST['start']) && $_REQUEST['start'] == 1) {
     $startLayer = ImageWorkshop::initFromPath("img/START@4x.png");
     $document->addLayer(7, $startLayer, 442, $startY);
 }
+
+$document->addLayer(8, $tipLayer, 1660, $tipY);
 
 $document->addLayer(10, $layerOffset, 0, $offsetY);
 $document->addLayer(20, $layerBase);
