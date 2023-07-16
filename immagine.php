@@ -56,7 +56,8 @@ switch($offset){
         $pilotY = 115;
         $tissueY = 113;
         $boneY = $startY = 112;
-        $tipY = 18;
+        $tipY = $finalSY = 18;
+        $finalLY = -27;
         break;
     case 10:
         $offsetPath = "img/Offset_10@4x.png";
@@ -64,7 +65,8 @@ switch($offset){
         $pilotY = 92;
         $tissueY = 90;
         $boneY = $startY = 89;
-        $tipY = -6;
+        $tipY = $finalSY = -6;
+        $finalLY = -52;
         break;
     case 11:
         $offsetPath = "img/Offset_11@4x.png";
@@ -72,7 +74,8 @@ switch($offset){
         $pilotY = 69;
         $tissueY = 67;
         $boneY = $startY = 66;
-        $tipY = -27;
+        $tipY = $finalSY = -27;
+        $finalLY = -72;
         break;
     case 13:
         $offsetPath = "img/Offset_13@4x.png";
@@ -80,7 +83,8 @@ switch($offset){
         $pilotY = 23;
         $tissueY = 21;
         $boneY = $startY = 20;
-        $tipY = -73;
+        $tipY = $finalSY = -73;
+        $finalLY = -118;
         break;
 }
 
@@ -101,6 +105,37 @@ switch ($tip){
         break;
     case 10:
         $tipY += 88;
+        break;
+}
+
+$finalS = $_REQUEST['final10'];
+$finalS = (int)substr($finalS,2);
+$finalSLayer = ImageWorkshop::initFromPath("img/FINAL_Short@4x.png");
+switch ($finalS){
+    case 6:
+        break;
+    case 8:
+        $finalSY += 43;
+        break;
+    case 10:
+        $finalSY += 88;
+        break;
+}
+
+$finalL = $_REQUEST['final16'];
+$finalL = (int)substr($finalL,2);
+$finalLLayer = ImageWorkshop::initFromPath("img/FINAL_Long@4x.png");
+switch ($finalL){
+    case 10:
+        break;
+    case 12:
+        $finalLY += 45;
+        break;
+    case 14:
+        $finalLY += 90;
+        break;
+    case 16:
+        $finalLY += 135;
         break;
 }
 
@@ -128,8 +163,10 @@ if(isset($_REQUEST['start']) && $_REQUEST['start'] == 1) {
 }
 
 $document->addLayer(8, $tipLayer, 1660, $tipY);
+$document->addLayer(9, $finalSLayer, 1840, $finalSY);
+$document->addLayer(10, $finalLLayer, 2020, $finalLY);
 
-$document->addLayer(10, $layerOffset, 0, $offsetY);
+$document->addLayer(11, $layerOffset, 0, $offsetY);
 $document->addLayer(20, $layerBase);
 
 $image = $document->getResult("ffffff");

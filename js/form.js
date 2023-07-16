@@ -92,7 +92,7 @@ function selectMount(mounts, item){
     }
 }
 
-function selectFinal(finals, num){
+function selectFinal(finals, num, item){
     var current = item;
     for(var i = 0; i < num; i++){
         var compare = finals[i].getAttribute('id');
