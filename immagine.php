@@ -94,53 +94,59 @@ $layerBase = ImageWorkshop::initFromPath("img/Schema_Base@4x.png");
 
 $layerOffset = ImageWorkshop::initFromPath($offsetPath);
 
-$tip = $_REQUEST['tip'];
-$tip = (int)$tip;
-$tipLayer = ImageWorkshop::initFromPath("img/TIP@4x.png");
-switch ($tip){
-    case 6:
-        break;
-    case 8:
-        $tipY += 43;
-        break;
-    case 10:
-        $tipY += 88;
-        break;
+if(isset($_REQUEST['tip'])) {
+    $tip = $_REQUEST['tip'];
+    $tip = (int)$tip;
+    $tipLayer = ImageWorkshop::initFromPath("img/TIP@4x.png");
+    switch ($tip) {
+        case 6:
+            break;
+        case 8:
+            $tipY += 43;
+            break;
+        case 10:
+            $tipY += 88;
+            break;
+    }
 }
 
-$finalS = $_REQUEST['final10'];
-$finalS = (int)substr($finalS,2);
-$finalSLayer = ImageWorkshop::initFromPath("img/FINAL_Short@4x.png");
-switch ($finalS){
-    case 6:
-        break;
-    case 8:
-        $finalSY += 43;
-        break;
-    case 10:
-        $finalSY += 88;
-        break;
+if(isset($_REQUEST['final10'])) {
+    $finalS = $_REQUEST['final10'];
+    $finalS = (int)substr($finalS, 2);
+    $finalSLayer = ImageWorkshop::initFromPath("img/FINAL_Short@4x.png");
+    switch ($finalS) {
+        case 6:
+            break;
+        case 8:
+            $finalSY += 43;
+            break;
+        case 10:
+            $finalSY += 88;
+            break;
+    }
 }
 
-$finalL = $_REQUEST['final16'];
-$finalL = (int)substr($finalL,2);
-$finalLLayer = ImageWorkshop::initFromPath("img/FINAL_Long@4x.png");
-switch ($finalL){
-    case 10:
-        break;
-    case 12:
-        $finalLY += 45;
-        break;
-    case 14:
-        $finalLY += 90;
-        break;
-    case 16:
-        $finalLY += 135;
-        break;
+if(isset($_REQUEST['final16'])) {
+    $finalL = $_REQUEST['final16'];
+    $finalL = (int)substr($finalL, 2);
+    $finalLLayer = ImageWorkshop::initFromPath("img/FINAL_Long@4x.png");
+    switch ($finalL) {
+        case 10:
+            break;
+        case 12:
+            $finalLY += 45;
+            break;
+        case 14:
+            $finalLY += 90;
+            break;
+        case 16:
+            $finalLY += 135;
+            break;
+    }
 }
 
 
-if($mountToggle == 1)
+if(isset($mountToggle) && $mountToggle == 1)
     $document->addLayer(2, $layerMount, 2180, 112);
 
 $document->addLayer(4, $pilotGroup, 630, $pilotY);
@@ -162,9 +168,14 @@ if(isset($_REQUEST['start']) && $_REQUEST['start'] == 1) {
     $document->addLayer(7, $startLayer, 442, $startY);
 }
 
-$document->addLayer(8, $tipLayer, 1660, $tipY);
-$document->addLayer(9, $finalSLayer, 1840, $finalSY);
-$document->addLayer(10, $finalLLayer, 2020, $finalLY);
+if(isset($_REQUEST['tip']))
+    $document->addLayer(8, $tipLayer, 1660, $tipY);
+
+if(isset($_REQUEST['final10']))
+    $document->addLayer(9, $finalSLayer, 1840, $finalSY);
+
+if(isset($_REQUEST['final16']))
+    $document->addLayer(10, $finalLLayer, 2020, $finalLY);
 
 $document->addLayer(11, $layerOffset, 0, $offsetY);
 $document->addLayer(20, $layerBase);

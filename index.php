@@ -44,6 +44,7 @@
                         Odont v.2
                     </h3>
                 </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -553,6 +554,11 @@
 
 <section class="book_section layout_padding">
     <div class="container">
+        <div class="flex-row" style="margin-bottom: 10px">
+            <div class="col" style="display: flex; justify-content: center">
+                    <img style="margin: auto; height: 140px" src="images/Logo_SNUC.png" />
+            </div>
+        </div>
         <div class="row">
             <div class="col">
                 <form method="post" action="immagine.php">
