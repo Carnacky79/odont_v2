@@ -655,21 +655,21 @@
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-2906" name="tip"
-                                       value="06">
+                                       value="gttd-2906">
                                 <label class="custom-control-label" for="gttd-2906">GTTD-2906</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-2908" name="tip"
-                                       value="08">
+                                       value="gttd-2908">
                                 <label class="custom-control-label" for="gttd-2908">GTTD-2908</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-2910" name="tip"
-                                       value="10">
+                                       value="gttd-2910">
                                 <label class="custom-control-label" for="gttd-2910">GTTD-2910</label>
                             </div>
                         </div>
@@ -677,21 +677,21 @@
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-3206" name="tip"
-                                       value="06">
+                                       value="gttd-3206">
                                 <label class="custom-control-label" for="gttd-3206">GTTD-3206</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-3208" name="tip"
-                                       value="08">
+                                       value="gttd-3208">
                                 <label class="custom-control-label" for="gttd-3208">GTTD-3208</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-3210" name="tip"
-                                       value="10">
+                                       value="gttd-3210">
                                 <label class="custom-control-label" for="gttd-3210">GTTD-3210</label>
                             </div>
                         </div>
@@ -699,21 +699,21 @@
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-3506" name="tip"
-                                       value="06">
+                                       value="gttd-3506">
                                 <label class="custom-control-label" for="gttd-3506">GTTD-3506</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-3508" name="tip"
-                                       value="08">
+                                       value="gttd-3508">
                                 <label class="custom-control-label" for="gttd-3508">GTTD-3508</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-3510" name="tip"
-                                       value="10">
+                                       value="gttd-3510">
                                 <label class="custom-control-label" for="gttd-3510">GTTD-3510</label>
                             </div>
                         </div>
@@ -721,21 +721,21 @@
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-3806" name="tip"
-                                       value="06">
+                                       value="gttd-3806">
                                 <label class="custom-control-label" for="gttd-3806">GTTD-3806</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-3808" name="tip"
-                                       value="08">
+                                       value="gttd-3808">
                                 <label class="custom-control-label" for="gttd-3808">GTTD-3808</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-3810" name="tip"
-                                       value="10">
+                                       value="gttd-3810">
                                 <label class="custom-control-label" for="gttd-3810">GTTD-3810</label>
                             </div>
                         </div>
@@ -743,21 +743,21 @@
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-4006" name="tip"
-                                       value="06">
+                                       value="gttd-4006">
                                 <label class="custom-control-label" for="gttd-4006">GTTD-4006</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-4008" name="tip"
-                                       value="08">
+                                       value="gttd-4008">
                                 <label class="custom-control-label" for="gttd-4008">GTTD-4008</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-4010" name="tip"
-                                       value="10">
+                                       value="gttd-4010">
                                 <label class="custom-control-label" for="gttd-4010">GTTD-4010</label>
                             </div>
                         </div>
@@ -765,21 +765,21 @@
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-4506" name="tip"
-                                       value="06">
+                                       value="gttd-4506">
                                 <label class="custom-control-label" for="gttd-4506">GTTD-4506</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-4508" name="tip"
-                                       value="08">
+                                       value="gttd-4508">
                                 <label class="custom-control-label" for="gttd-4508">GTTD-4508</label>
                             </div>
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
                                 <input class="custom-control-input" type="checkbox" id="gttd-4510" name="tip"
-                                       value="10">
+                                       value="gttd-4510">
                                 <label class="custom-control-label" for="gttd-4510">GTTD-4510</label>
                             </div>
                         </div>

@@ -88,7 +88,13 @@ switch($offset){
         break;
 }
 
-$document = ImageWorkshop::initFromPath("img/Tessuto_Gengivale@4x.png");
+$offsetXGen = 156;
+$offsetYGen = 274;
+$document = ImageWorkshop::initVirginLayer(2700, 1150, "ffffff");
+
+$layerTessuto = ImageWorkshop::initFromPath("img/Tessuto_Gengivale@4x.png");
+
+$document->addLayer(-1, $layerTessuto, $offsetXGen, $offsetYGen);
 
 $layerBase = ImageWorkshop::initFromPath("img/Schema_Base@4x.png");
 
@@ -96,9 +102,9 @@ $layerOffset = ImageWorkshop::initFromPath($offsetPath);
 
 if(isset($_REQUEST['tip'])) {
     $tip = $_REQUEST['tip'];
-    $tip = (int)$tip;
+    $tipInt = (int)substr($tip, strlen($tip)-2);
     $tipLayer = ImageWorkshop::initFromPath("img/TIP@4x.png");
-    switch ($tip) {
+    switch ($tipInt) {
         case 6:
             break;
         case 8:
@@ -147,38 +153,38 @@ if(isset($_REQUEST['final16'])) {
 
 
 if(isset($mountToggle) && $mountToggle == 1)
-    $document->addLayer(2, $layerMount, 2180, 112);
+    $document->addLayer(2, $layerMount, 2180 + $offsetXGen, 112 + $offsetYGen);
 
-$document->addLayer(4, $pilotGroup, 630, $pilotY);
+$document->addLayer(4, $pilotGroup, 630 + $offsetXGen, $pilotY + $offsetYGen);
 
-$document->addLayer(5, $impiantoLayer, 2193, 465);
+$document->addLayer(5, $impiantoLayer, 2193 + $offsetXGen, 465 + $offsetYGen);
 
 if(isset($_REQUEST['tissue']) && $_REQUEST['tissue'] == 1) {
     $tissueLayer = ImageWorkshop::initFromPath("img/PUNCH@4x.png");
-    $document->addLayer(6, $tissueLayer, 110, $tissueY);
+    $document->addLayer(6, $tissueLayer, 110 + $offsetXGen, $tissueY + $offsetYGen);
 }
 
 if(isset($_REQUEST['bone']) && $_REQUEST['bone'] == 1) {
     $boneLayer = ImageWorkshop::initFromPath("img/BONE_FLATTENER@4x.png");
-    $document->addLayer(7, $boneLayer, 275, $boneY);
+    $document->addLayer(7, $boneLayer, 275 + $offsetXGen, $boneY + $offsetYGen);
 }
 
 if(isset($_REQUEST['start']) && $_REQUEST['start'] == 1) {
     $startLayer = ImageWorkshop::initFromPath("img/START@4x.png");
-    $document->addLayer(7, $startLayer, 442, $startY);
+    $document->addLayer(7, $startLayer, 442 + $offsetXGen, $startY + $offsetYGen);
 }
 
 if(isset($_REQUEST['tip']))
-    $document->addLayer(8, $tipLayer, 1660, $tipY);
+    $document->addLayer(8, $tipLayer, 1660 + $offsetXGen, $tipY + $offsetYGen);
 
 if(isset($_REQUEST['final10']))
-    $document->addLayer(9, $finalSLayer, 1840, $finalSY);
+    $document->addLayer(9, $finalSLayer, 1840 + $offsetXGen, $finalSY + $offsetYGen);
 
 if(isset($_REQUEST['final16']))
-    $document->addLayer(10, $finalLLayer, 2020, $finalLY);
+    $document->addLayer(10, $finalLLayer, 2020 + $offsetXGen, $finalLY + $offsetYGen);
 
-$document->addLayer(11, $layerOffset, 0, $offsetY);
-$document->addLayer(20, $layerBase);
+$document->addLayer(11, $layerOffset, 0 + $offsetXGen, $offsetY + $offsetYGen);
+$document->addLayer(20, $layerBase, $offsetXGen, $offsetYGen);
 
 $image = $document->getResult("ffffff");
 
