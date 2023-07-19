@@ -7,12 +7,13 @@ require __DIR__ . '/vendor/autoload.php';
  */
 use PHPImageWorkshop\ImageWorkshop;
 
-$lunghezza = (int)$_REQUEST['lunghezza'];
-$impiantoPath = "img/impianto_" . $lunghezza . "@4x.png";
+$lunghezza = $_REQUEST['lunghezza'];
+$impiantoPath = "img/impianto_" . (int)$lunghezza . "@4x.png";
 $impiantoLayer = ImageWorkshop::initFromPath($impiantoPath);
 
 $offset = $_REQUEST['offset'];
-$offset = (int)$offset;
+
+$apexText =
 
 $pilots = $_REQUEST['pilot'];
 
@@ -62,7 +63,7 @@ if($mountToggle == 1){
     $textGroup->addLayer(10, $mountText, 2350);
 }
 
-switch($offset){
+switch((int)$offset){
     case 9:
         $offsetPath = "img/Offset_9@4x.png";
         $offsetY = 230;
