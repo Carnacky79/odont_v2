@@ -7,7 +7,7 @@ require __DIR__ . '/vendor/autoload.php';
  */
 use PHPImageWorkshop\ImageWorkshop;
 
-$lunghezza = $_REQUEST['lunghezza'];
+$lunghezza = (int)$_REQUEST['lunghezza'];
 $impiantoPath = "img/impianto_" . $lunghezza . "@4x.png";
 $impiantoLayer = ImageWorkshop::initFromPath($impiantoPath);
 
@@ -127,13 +127,17 @@ if(isset($_REQUEST['tip'])) {
             $tipY += 88;
             break;
     }
+
+    $tText = "      TIP\n".strtoupper($tip);
+    $tipText = ImageWorkshop::initTextLayer($tText, "img/arial.ttf",20, "000000");
+    $textGroup->addLayer(10, $tipText, 1800);
 }
 
 if(isset($_REQUEST['final10'])) {
     $finalS = $_REQUEST['final10'];
-    $finalS = (int)substr($finalS, 2);
+    $finalSInt = (int)substr($finalS, strlen($finalS)-2);
     $finalSLayer = ImageWorkshop::initFromPath("img/FINAL_Short@4x.png");
-    switch ($finalS) {
+    switch ($finalSInt) {
         case 6:
             break;
         case 8:
@@ -143,13 +147,17 @@ if(isset($_REQUEST['final10'])) {
             $finalSY += 88;
             break;
     }
+
+    $fsText = " FINAL  S\n".strtoupper($finalS);
+    $finalSText = ImageWorkshop::initTextLayer($fsText, "img/arial.ttf",20, "000000");
+    $textGroup->addLayer(10, $finalSText, 1990);
 }
 
 if(isset($_REQUEST['final16'])) {
     $finalL = $_REQUEST['final16'];
-    $finalL = (int)substr($finalL, 2);
+    $finalLInt = (int)substr($finalL, strlen($finalL)-2);
     $finalLLayer = ImageWorkshop::initFromPath("img/FINAL_Long@4x.png");
-    switch ($finalL) {
+    switch ($finalLInt) {
         case 10:
             break;
         case 12:
@@ -162,6 +170,10 @@ if(isset($_REQUEST['final16'])) {
             $finalLY += 135;
             break;
     }
+
+    $flText = " FINAL  L\n".strtoupper($finalL);
+    $finalLText = ImageWorkshop::initTextLayer($flText, "img/arial.ttf",20, "000000");
+    $textGroup->addLayer(10, $finalLText, 2160);
 }
 
 
@@ -204,7 +216,7 @@ if(isset($_REQUEST['final16']))
 
 $document->addLayer(11, $layerOffset, 0 + $offsetXGen, $offsetY + $offsetYGen);
 $document->addLayer(20, $layerBase, $offsetXGen, $offsetYGen);
-$document->addLayer(30, $textGroup, 0, 200);
+$document->addLayer(30, $textGroup, 0, 80);
 
 $image = $document->getResult("ffffff");
 
