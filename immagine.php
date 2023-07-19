@@ -8,12 +8,23 @@ require __DIR__ . '/vendor/autoload.php';
 use PHPImageWorkshop\ImageWorkshop;
 
 $lunghezza = $_REQUEST['lunghezza'];
+$lunghezzaText = ImageWorkshop::initTextLayer("Lunghezza: ".$lunghezza, "img/arial_bold.ttf",16, "000000");
 $impiantoPath = "img/impianto_" . (int)$lunghezza . "@4x.png";
 $impiantoLayer = ImageWorkshop::initFromPath($impiantoPath);
 
 $offset = $_REQUEST['offset'];
+$offsetText = ImageWorkshop::initTextLayer("Offset:         ".$offset, "img/arial_bold.ttf",16, "000000");
 
-$apexText =
+$apexText = ImageWorkshop::initTextLayer("Apex:          ".$_REQUEST['apex'], "img/arial_bold.ttf",16, "000000");
+
+$diamText = ImageWorkshop::initTextLayer("Diametro:    ".$_REQUEST['diametro'], "img/arial_bold.ttf",16, "000000");
+
+$textGroupDesc = ImageWorkshop::initVirginLayer(200, 250, null);
+
+$textGroupDesc->addLayer(1, $offsetText, 0, 20);
+$textGroupDesc->addLayer(1, $diamText, 0, 60);
+$textGroupDesc->addLayer(1, $apexText, 0, 100);
+$textGroupDesc->addLayer(1, $lunghezzaText, 0, 140);
 
 $pilots = $_REQUEST['pilot'];
 
@@ -37,30 +48,30 @@ foreach($pilots as $p){
 
 $mountToggle = $_REQUEST['mountToggle'];
 if($mountToggle == 1){
-    $mText = "MOUNT\n";
+    $mText = " MOUNT\n";
     $mount = $_REQUEST['mount'];
     switch ((int)$mount){
         case 9:
             $mountPath = "img/MOUNT_9@4x.png";
-            $mText .= "    9";
+            $mText .= "GM-M 9";
             break;
         case 10:
             $mountPath = "img/MOUNT_10@4x.png";
-            $mText .= "   10";
+            $mText .= "GM-M 10";
             break;
         case 11:
             $mountPath = "img/MOUNT_11@4x.png";
-            $mText .= "   11";
+            $mText .= "GM-M 11";
             break;
         case 13:
             $mountPath = "img/MOUNT_13@4x.png";
-            $mText .= "   13";
+            $mText .= "GM-M 13";
             break;
     }
 
     $layerMount = ImageWorkshop::initFromPath($mountPath);
     $mountText = ImageWorkshop::initTextLayer($mText, "img/arial.ttf",20, "000000");
-    $textGroup->addLayer(10, $mountText, 2350);
+    $textGroup->addLayer(10, $mountText, 2340);
 }
 
 switch((int)$offset){
@@ -218,6 +229,7 @@ if(isset($_REQUEST['final16']))
 $document->addLayer(11, $layerOffset, 0 + $offsetXGen, $offsetY + $offsetYGen);
 $document->addLayer(20, $layerBase, $offsetXGen, $offsetYGen);
 $document->addLayer(30, $textGroup, 0, 80);
+$document->addLayer(30, $textGroupDesc, 0, 0, "RT");
 
 $image = $document->getResult("ffffff");
 
