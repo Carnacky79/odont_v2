@@ -18,35 +18,48 @@ $pilots = $_REQUEST['pilot'];
 
 $pilotGroup = ImageWorkshop::initVirginLayer(1015, 850);
 
+$textGroup = ImageWorkshop::initVirginLayer(2480, 275, null);
+
 $layerLevel = 1;
 $positionX = 0;
 foreach($pilots as $p){
     $pilotPath = "img/PILOT_" . $p . "@4x.png";
     $pilotLayer = ImageWorkshop::initFromPath($pilotPath);
-    $pilotGroup->addLayer($layerLevel++, $pilotLayer, $positionX);
+    $pilotGroup->addLayer($layerLevel, $pilotLayer, $positionX);
+
+
+    $pilotText = ImageWorkshop::initTextLayer("PILOT\n   ".$p, "img/arial.ttf",20, "000000");
+    $textGroup->addLayer($layerLevel++, $pilotText, $positionX + 790);
+
     $positionX += 175;
 }
 
 $mountToggle = $_REQUEST['mountToggle'];
 if($mountToggle == 1){
+    $mText = "MOUNT\n";
     $mount = $_REQUEST['mount'];
     switch ((int)$mount){
         case 9:
             $mountPath = "img/MOUNT_9@4x.png";
+            $mText .= "    9";
             break;
         case 10:
             $mountPath = "img/MOUNT_10@4x.png";
+            $mText .= "   10";
             break;
         case 11:
             $mountPath = "img/MOUNT_11@4x.png";
+            $mText .= "   11";
             break;
         case 13:
             $mountPath = "img/MOUNT_13@4x.png";
+            $mText .= "   13";
             break;
     }
 
     $layerMount = ImageWorkshop::initFromPath($mountPath);
-
+    $mountText = ImageWorkshop::initTextLayer($mText, "img/arial.ttf",20, "000000");
+    $textGroup->addLayer(10, $mountText, 2350);
 }
 
 switch($offset){
@@ -162,16 +175,22 @@ $document->addLayer(5, $impiantoLayer, 2193 + $offsetXGen, 465 + $offsetYGen);
 if(isset($_REQUEST['tissue']) && $_REQUEST['tissue'] == 1) {
     $tissueLayer = ImageWorkshop::initFromPath("img/PUNCH@4x.png");
     $document->addLayer(6, $tissueLayer, 110 + $offsetXGen, $tissueY + $offsetYGen);
+    $punchText = ImageWorkshop::initTextLayer("PUNCH", "img/arial.ttf",20, "000000");
+    $textGroup->addLayer(10, $punchText, 255);
 }
 
 if(isset($_REQUEST['bone']) && $_REQUEST['bone'] == 1) {
     $boneLayer = ImageWorkshop::initFromPath("img/BONE_FLATTENER@4x.png");
     $document->addLayer(7, $boneLayer, 275 + $offsetXGen, $boneY + $offsetYGen);
+    $boneText = ImageWorkshop::initTextLayer("     BONE\nFLATTENER", "img/arial.ttf",20, "000000");
+    $textGroup->addLayer(10, $boneText, 400);
 }
 
 if(isset($_REQUEST['start']) && $_REQUEST['start'] == 1) {
     $startLayer = ImageWorkshop::initFromPath("img/START@4x.png");
     $document->addLayer(7, $startLayer, 442 + $offsetXGen, $startY + $offsetYGen);
+    $startText = ImageWorkshop::initTextLayer("START", "img/arial.ttf",20, "000000");
+    $textGroup->addLayer(10, $startText, 610);
 }
 
 if(isset($_REQUEST['tip']))
@@ -185,6 +204,7 @@ if(isset($_REQUEST['final16']))
 
 $document->addLayer(11, $layerOffset, 0 + $offsetXGen, $offsetY + $offsetYGen);
 $document->addLayer(20, $layerBase, $offsetXGen, $offsetYGen);
+$document->addLayer(30, $textGroup, 0, 200);
 
 $image = $document->getResult("ffffff");
 
