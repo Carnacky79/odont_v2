@@ -233,9 +233,18 @@ $document->addLayer(30, $textGroupDesc, 0, 0, "RT");
 
 $image = $document->getResult("ffffff");
 
-header('Content-type: image/jpeg');
+$dirPath = "img/tmp";
+$filename = "image.png";
+$createFolders = true;
+$backgroundColor = null; // transparent, only for PNG (otherwise it will be white if set null)
+$imageQuality = 95; // useless for GIF, usefull for PNG and JPEG (0 to 100%)
 
-imagejpeg($image, null, 95); // We choose to show a JPEG with a quality of 95%
+$document->save($dirPath, $filename, $createFolders, $backgroundColor, $imageQuality);
+
+//header('Content-type: image/jpeg');
+
+//imagejpeg($image, null, 95); // We choose to show a JPEG with a quality of 95%
+header("location: downbload.php");
 
 
 

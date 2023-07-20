@@ -569,19 +569,19 @@
                     <div class="form-row ">
                         <div class="form-group col-lg-3">
                             <label for="offset">Offset</label>
-                            <input type="text" class="form-control" id="offset" name="offset">
+                            <input type="text" class="form-control" id="offset" name="offset" required="required">
                         </div>
                         <div class="form-group col-lg-3">
                             <label for="diametro">Diametro</label>
-                            <input type="text" class="form-control" id="diametro" name="diametro">
+                            <input type="text" class="form-control" id="diametro" name="diametro" required="required">
                         </div>
                         <div class="form-group col-lg-3">
                             <label for="apex">Apex</label>
-                            <input type="text" class="form-control" id="apex" name="apex">
+                            <input type="text" class="form-control" id="apex" name="apex" required="required">
                         </div>
                         <div class="form-group col-lg-3">
                             <label for="lunghezza">Lunghezza</label>
-                            <input type="text" class="form-control" id="lunghezza" name="lunghezza">
+                            <input type="text" class="form-control" id="lunghezza" name="lunghezza" required="required">
                         </div>
                     </div>
                     <div class="form-row ">
