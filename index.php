@@ -1,3 +1,10 @@
+<?php
+
+$prefDir = 'img/pref';
+$prefImgs = array_diff(scandir($prefDir), array('..', '.'));
+
+//var_dump($prefImgs);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -564,8 +571,41 @@
                 <form method="post" action="immagine.php">
                     <h4>
                         <span class="design_dot"></span>
+                        <span style="font-variant: small-caps">Preferiti</span>
+                    </h4>
+                    <?php
+                        if($prefImgs){
+                            foreach ($prefImgs as $i){
+                                echo <<<HTML
+                    <div class="form-row ">
+                        <div class="form-group col-lg-6">
+                            $i
+                        </div>
+                    </div>
+HTML;
+                            }
+                        }else{
+                            echo <<<HTML
+                    <div class="form-row ">
+                        <div class="form-group col-lg-6">
+                            Non sono presenti impianti preferiti
+                        </div>
+                    </div>
+HTML;
+
+                        }
+                    ?>
+
+                    <h4 style="margin-top: 20px; border-top: 1px solid black;padding-top: 5px">
+                        <span class="design_dot"></span>
                         <span style="font-variant: small-caps">Scegli Impianto</span>
                     </h4>
+                    <div class="form-row ">
+                        <div class="form-group col-lg-6">
+                            <label for="nomeimp">Nome Impianto</label>
+                            <input type="text" class="form-control" id="nomeimp" name="nomeimp" required="required">
+                        </div>
+                    </div>
                     <div class="form-row ">
                         <div class="form-group col-lg-3">
                             <label for="offset">Offset</label>
@@ -584,6 +624,7 @@
                             <input type="text" class="form-control" id="lunghezza" name="lunghezza" required="required">
                         </div>
                     </div>
+
                     <div class="form-row ">
                         <div class="col-lg-4 custom-control-inline custom-checkbox"
                              style="justify-content: center; margin-right: 0">

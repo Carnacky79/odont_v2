@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -66,20 +69,28 @@
           <span class="design_dot"></span>
           Scarica l'immagine
         </h2>
+          <h2>
+              <?php echo "Nome impianto: " . $_SESSION['nomeimp'] ?>
+          </h2>
       </div>
       <div class="col-md-7 mx-auto px-0">
         <div class="img-box b2">
-          <img src="img/tmp/image.png" alt="" />
+            <?php echo "<img src=\"img/tmp/".$_SESSION['nomeimp'].".png\" />"    ?>
         </div>
       </div>
       <div class="col-md-9 mx-auto px-0">
-        <div class="detail-box">
-          <a href="img/tmp/image.png" download id="download">
-            Scarica Immagine
-          </a>
-        </div>
           <div class="detail-box">
-              <a href="index.php">
+              <a id="doc">
+                  Aggiungi a Documento
+              </a>
+          </div>
+          <div class="detail-box">
+              <a id="pref">
+                  Aggiungi ai Preferiti
+              </a>
+          </div>
+          <div class="detail-box">
+              <a id="back">
                   Torna Indietro
               </a>
           </div>

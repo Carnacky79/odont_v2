@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
+session_start();
 /*
  * offset 9 - y 230
  * offset 10 - y 207
@@ -233,8 +234,10 @@ $document->addLayer(30, $textGroupDesc, 0, 0, "RT");
 
 $image = $document->getResult("ffffff");
 
+$nomeImpianto = $_REQUEST['nomeimp'];
+$_SESSION['nomeimp'] = $nomeImpianto;
 $dirPath = "img/tmp";
-$filename = "image.png";
+$filename =  $nomeImpianto . ".png";
 $createFolders = true;
 $backgroundColor = null; // transparent, only for PNG (otherwise it will be white if set null)
 $imageQuality = 95; // useless for GIF, usefull for PNG and JPEG (0 to 100%)
@@ -244,7 +247,7 @@ $document->save($dirPath, $filename, $createFolders, $backgroundColor, $imageQua
 //header('Content-type: image/jpeg');
 
 //imagejpeg($image, null, 95); // We choose to show a JPEG with a quality of 95%
-header("location: downbload.php");
+header("location: download.php");
 
 
 
