@@ -80,19 +80,19 @@
       </div>
       <div class="col-md-9 mx-auto px-0">
           <div class="detail-box">
-              <a id="doc">
+              <button class="btn btn-info" id="doc">
                   Aggiungi a Documento
-              </a>
+              </button>
           </div>
           <div class="detail-box">
-              <a id="pref">
+              <button class="btn btn-info" id="pref">
                   Aggiungi ai Preferiti
-              </a>
+              </button>
           </div>
           <div class="detail-box">
-              <a id="back">
+              <button class="btn btn-info" id="back">
                   Torna Indietro
-              </a>
+              </button>
           </div>
       </div>
     </div>
@@ -115,6 +115,30 @@
   </footer>
   <!-- footer section -->
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  ...
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- End of Modal -->
+
+
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -124,6 +148,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+  <script src="js/ajax.js"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
