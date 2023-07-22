@@ -66,8 +66,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          <span class="design_dot"></span>
-          Scarica l'immagine
+          Immagine generata
         </h2>
           <h2>
               <?php echo "Nome impianto: " . $_SESSION['nomeimp'] ?>

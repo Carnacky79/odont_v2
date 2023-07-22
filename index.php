@@ -1,5 +1,5 @@
 <?php
-
+session_destroy();
 $prefDir = 'img/pref';
 $prefImgs = array_diff(scandir($prefDir), array('..', '.'));
 
@@ -578,8 +578,8 @@ $prefImgs = array_diff(scandir($prefDir), array('..', '.'));
                             foreach ($prefImgs as $i){
                                 echo <<<HTML
                     <div class="form-row ">
-                        <div class="form-group col-lg-6">
-                            $i
+                        <div class="form-group col-6">
+                            <a href="imgpreferiti.php?img=$i">$i</a>
                         </div>
                     </div>
 HTML;
@@ -833,7 +833,7 @@ HTML;
                     </fieldset>
 
                     <fieldset style="border: 1px solid dodgerblue; padding-bottom: 25px">
-                        <legend style="width: auto">Final 10mm</legend>
+                        <legend style="width: auto">Final S</legend>
                         <div class="form-row ">
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
                                  style="justify-content: center; margin-right: 0">
@@ -974,7 +974,7 @@ HTML;
                         </div>
                     </fieldset>
                     <fieldset style="border: 1px solid dodgerblue; padding-bottom: 25px">
-                        <legend style="width: auto">Final 16mm</legend>
+                        <legend style="width: auto">Final L</legend>
                         <div class="form-row ">
 
                             <div class="col-lg-4 custom-control-inline custom-checkbox"
