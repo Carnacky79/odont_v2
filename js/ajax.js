@@ -9,5 +9,18 @@ $( document ).ready(function() {
             .fail(function() {
                 alert( "Errore" );
             })
-    })
+    });
+
+    var btnDoc = $("#doc");
+
+    btnDoc.click(function(){
+        $.ajax( "doc.php" )
+            .done(function(msg) {
+                $("#docModal").modal('show');
+            })
+            .fail(function() {
+                alert( "Errore" );
+            })
+    });
+
 })
