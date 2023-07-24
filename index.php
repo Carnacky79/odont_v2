@@ -1,5 +1,6 @@
 <?php
 session_destroy();
+session_start();
 $prefDir = 'img/pref';
 $prefImgs = array_diff(scandir($prefDir), array('..', '.'));
 

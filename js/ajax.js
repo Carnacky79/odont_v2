@@ -23,4 +23,16 @@ $( document ).ready(function() {
             })
     });
 
+    var btnBack = $("#back");
+
+    btnBack.click(function() {
+        window.location.href = "index.php";
+    });
+
+    var btnDelPref = $("#delpref");
+
+    btnDelPref.click(function() {
+        window.location.href = "delpref.php";
+    });
+
 })
