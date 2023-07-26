@@ -29,6 +29,14 @@ $( document ).ready(function() {
         window.location.href = "index.php";
     });
 
+    $("#backFromModal").click(function() {
+        window.location.href = "index.php";
+    });
+
+    $("#docDownload").click(function() {
+        window.location.href = "docDownload.php";
+    });
+
     var btnDelPref = $("#delpref");
 
     btnDelPref.click(function() {

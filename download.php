@@ -126,6 +126,8 @@
               </div>
               <div class="modal-body">
                   Immagine aggiunta al documento. Scegli se aggiungere altri impianti o scaricare il documento
+                  <br>
+                  <span id="msg-id"></span>
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>

@@ -12,7 +12,7 @@ fclose($prefFile);
 foreach ($lines as $l){
 echo $l . "<br>" . strlen(trim($l)) . "<hr>";
     if(strcmp(trim($l), trim($tmpPref)) == 0){
-        //unlink($tmpPref);
+        unlink($tmpPref);
     }else{
         if(strlen($l)>2)
             $newLines[] = $l;
