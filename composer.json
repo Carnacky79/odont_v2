@@ -1,5 +1,6 @@
 {
     "require": {
-        "sybio/image-workshop": "^2.2"
+        "sybio/image-workshop": "^2.2",
+        "mpdf/mpdf": "^8.1"
     }
 }

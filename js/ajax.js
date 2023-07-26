@@ -34,7 +34,7 @@ $( document ).ready(function() {
     });
 
     $("#docDownload").click(function() {
-        window.location.href = "docDownload.php";
+        window.location.href = "docview.php";
     });
 
     var btnDelPref = $("#delpref");

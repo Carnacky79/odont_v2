@@ -1,0 +1,2 @@
+img/doc/ciao.png
+img/doc/ciao3.png
