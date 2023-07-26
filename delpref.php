@@ -10,7 +10,7 @@ while (!feof($prefFile)) {
 fclose($prefFile);
 
 foreach ($lines as $l){
-echo $l . "<br>" . strlen(trim($l)) . "<hr>";
+//echo $l . "<br>" . strlen(trim($l)) . "<hr>";
     if(strcmp(trim($l), trim($tmpPref)) == 0){
         unlink($tmpPref);
     }else{
@@ -28,3 +28,4 @@ fclose($prefFile);
 //$prefFile = fopen("db/pref.txt", "w") or die("Unable to open file!");
 //fwrite($prefFile, $newText);
 //fclose($prefFile);
+header("location: index.php");

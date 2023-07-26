@@ -1,5 +1,2 @@
 img/pref/ciao.png
-img/pref/ciao2.png
 img/pref/ciao3.png
-
-img/pref/ciao5.png
