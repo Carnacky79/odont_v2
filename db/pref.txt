@@ -1,2 +1,2 @@
 img/pref/ciao.png
-img/pref/ciagffdo.png
+img/pref/ciao2.png

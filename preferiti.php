@@ -15,11 +15,11 @@ if (!copy($tmpImp, $prefImp)) {
     clearstatcache();
     if(filesize($prefTxt)) {
         $prefFile = fopen($prefTxt, "a") or die("Unable to open file!");
-        fwrite($prefFile, $prefImp."\n");
+        fwrite($prefFile, PHP_EOL.$prefImp);
         fclose($prefFile);
     }else{
         $prefFile = fopen($prefTxt, "w") or die("Unable to open file!");
-        fwrite($prefFile, $prefImp."\n");
+        fwrite($prefFile, $prefImp);
         fclose($prefFile);
     }
 }

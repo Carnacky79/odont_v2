@@ -10,24 +10,21 @@ while (!feof($prefFile)) {
 fclose($prefFile);
 
 foreach ($lines as $l){
-
+echo $l . "<br>" . strlen(trim($l)) . "<hr>";
     if(strcmp(trim($l), trim($tmpPref)) == 0){
         //unlink($tmpPref);
     }else{
-        $newLines[] = $l;
+        if(strlen($l)>2)
+            $newLines[] = $l;
     }
 }
 
-$newText = "";
-foreach($newLines as $n){
-
-        $newText .= $n."\n";
-}
-
-var_dump($newText);
-
-/*
 $prefFile = fopen("db/pref.txt", "w") or die("Unable to open file!");
-fwrite($prefFile, $newText);
+foreach($newLines as $n){
+    fwrite($prefFile, $n);
+}
 fclose($prefFile);
-*/
+
+//$prefFile = fopen("db/pref.txt", "w") or die("Unable to open file!");
+//fwrite($prefFile, $newText);
+//fclose($prefFile);

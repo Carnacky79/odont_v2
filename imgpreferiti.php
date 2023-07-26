@@ -4,7 +4,6 @@ $img = $_GET['img'];
 $imgPath = "img/pref/".$img;
 
 $_SESSION['prefpath'] = $imgPath;
-echo $_SESSION['prefpath'];
 ?>
 
 <!DOCTYPE html>
