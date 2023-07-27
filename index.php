@@ -5,7 +5,18 @@ $prefDir = 'img/pref';
 $prefImgs = array_diff(scandir($prefDir), array('..', '.'));
 
 if(str_contains($_SERVER['HTTP_REFERER'], "docview")){
+    $file = fopen('db/doc.txt', 'w');
+    ftruncate($file, 0);
+    fclose($file);
 
+    // loop through the files one by one
+    foreach(glob('img/doc' . '/*') as $file){
+        // check if is a file and not sub-directory
+        if(is_file($file)){
+            // delete file
+            unlink($file);
+        }
+    }
 }
 ?>
 <!DOCTYPE html>
