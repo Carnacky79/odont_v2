@@ -1,2 +1,0 @@
-img/pref/ciao.png
-img/pref/ciao3.png
