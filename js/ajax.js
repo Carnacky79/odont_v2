@@ -33,6 +33,13 @@ $( document ).ready(function() {
         window.location.href = "index.php";
     });
 
+    $("#backFromPDF").click(function() {
+        var ask = window.confirm("Hai scaricato prima il PDF?");
+        if (ask) {
+            window.location.href = "index.php";
+        }
+    });
+
     $("#docDownload").click(function() {
         window.location.href = "docview.php";
     });

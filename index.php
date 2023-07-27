@@ -4,7 +4,9 @@ session_destroy();
 $prefDir = 'img/pref';
 $prefImgs = array_diff(scandir($prefDir), array('..', '.'));
 
-//var_dump($prefImgs);
+if(str_contains($_SERVER['HTTP_REFERER'], "docview")){
+
+}
 ?>
 <!DOCTYPE html>
 <html>
