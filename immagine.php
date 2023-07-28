@@ -230,11 +230,15 @@ if(isset($_REQUEST['final16']))
 $document->addLayer(11, $layerOffset, 0 + $offsetXGen, $offsetY + $offsetYGen);
 $document->addLayer(20, $layerBase, $offsetXGen, $offsetYGen);
 $document->addLayer(30, $textGroup, 0, 80);
-$document->addLayer(40, $textGroupDesc, 0, 0, "LT");
+$document->addLayer(40, $textGroupDesc, 10, 0, "LT");
+
+$nomeImpianto = $_REQUEST['nomeimp'];
+$impiantoText = ImageWorkshop::initTextLayer("Impianto: ".strtoupper($nomeImpianto), "img/arial.ttf",30, "000000");
+$document->addLayer(40, $impiantoText, -($impiantoText->getWidth()/2), 10, "MT");
 
 $image = $document->getResult("ffffff");
 
-$nomeImpianto = $_REQUEST['nomeimp'];
+
 $_SESSION['nomeimp'] = $nomeImpianto;
 $dirPath = "img/tmp";
 $filename =  $nomeImpianto . ".png";
@@ -244,7 +248,7 @@ $imageQuality = 95; // useless for GIF, usefull for PNG and JPEG (0 to 100%)
 
 $document->save($dirPath, $filename, $createFolders, $backgroundColor, $imageQuality);
 
-//header('Content-type: image/jpeg');
+header('Content-type: image/jpeg');
 
 //imagejpeg($image, null, 95); // We choose to show a JPEG with a quality of 95%
 //header("location: download.php");
