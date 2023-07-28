@@ -3,21 +3,22 @@ session_start();
 session_destroy();
 $prefDir = 'img/pref';
 $prefImgs = array_diff(scandir($prefDir), array('..', '.'));
+if(isset($_SERVER['HTTP_REFERER'])) {
+    if (str_contains($_SERVER['HTTP_REFERER'], "docview")) {
+        $file = fopen('db/doc.txt', 'w');
+        ftruncate($file, 0);
+        fclose($file);
 
-if(str_contains($_SERVER['HTTP_REFERER'], "docview")){
-    $file = fopen('db/doc.txt', 'w');
-    ftruncate($file, 0);
-    fclose($file);
-
-    foreach(glob('img/doc' . '/*') as $file){
-        if(is_file($file)){
-            unlink($file);
+        foreach (glob('img/doc' . '/*') as $file) {
+            if (is_file($file)) {
+                unlink($file);
+            }
         }
-    }
 
-    foreach(glob('img/tmp' . '/*') as $file){
-        if(is_file($file)){
-            unlink($file);
+        foreach (glob('img/tmp' . '/*') as $file) {
+            if (is_file($file)) {
+                unlink($file);
+            }
         }
     }
 }

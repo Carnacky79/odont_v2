@@ -9,16 +9,16 @@ session_start();
 use PHPImageWorkshop\ImageWorkshop;
 
 $lunghezza = $_REQUEST['lunghezza'];
-$lunghezzaText = ImageWorkshop::initTextLayer("Lunghezza: ".$lunghezza, "img/arial_bold.ttf",16, "000000");
+$lunghezzaText = ImageWorkshop::initTextLayer("Lunghezza: ".$lunghezza, "img/arial_bold.ttf",20, "000000");
 $impiantoPath = "img/impianto_" . (int)$lunghezza . "@4x.png";
 $impiantoLayer = ImageWorkshop::initFromPath($impiantoPath);
 
 $offset = $_REQUEST['offset'];
-$offsetText = ImageWorkshop::initTextLayer("Offset:         ".$offset, "img/arial_bold.ttf",16, "000000");
+$offsetText = ImageWorkshop::initTextLayer("Offset:         ".$offset, "img/arial_bold.ttf",20, "000000");
 
-$apexText = ImageWorkshop::initTextLayer("Apex:          ".$_REQUEST['apex'], "img/arial_bold.ttf",16, "000000");
+$apexText = ImageWorkshop::initTextLayer("Apex:          ".$_REQUEST['apex'], "img/arial_bold.ttf",20, "000000");
 
-$diamText = ImageWorkshop::initTextLayer("Diametro:    ".$_REQUEST['diametro'], "img/arial_bold.ttf",16, "000000");
+$diamText = ImageWorkshop::initTextLayer("Diametro:    ".$_REQUEST['diametro'], "img/arial_bold.ttf",20, "000000");
 
 $textGroupDesc = ImageWorkshop::initVirginLayer(200, 250, null);
 
@@ -41,7 +41,7 @@ foreach($pilots as $p){
     $pilotGroup->addLayer($layerLevel, $pilotLayer, $positionX);
 
 
-    $pilotText = ImageWorkshop::initTextLayer("PILOT\n   ".$p, "img/arial.ttf",20, "000000");
+    $pilotText = ImageWorkshop::initTextLayer("PILOT\n   ".$p, "img/arial.ttf",26, "000000");
     $textGroup->addLayer($layerLevel++, $pilotText, $positionX + 790);
 
     $positionX += 175;
@@ -71,7 +71,7 @@ if($mountToggle == 1){
     }
 
     $layerMount = ImageWorkshop::initFromPath($mountPath);
-    $mountText = ImageWorkshop::initTextLayer($mText, "img/arial.ttf",20, "000000");
+    $mountText = ImageWorkshop::initTextLayer($mText, "img/arial.ttf",26, "000000");
     $textGroup->addLayer(10, $mountText, 2340);
 }
 
@@ -142,7 +142,7 @@ if(isset($_REQUEST['tip'])) {
     }
 
     $tText = "      TIP\n".strtoupper($tip);
-    $tipText = ImageWorkshop::initTextLayer($tText, "img/arial.ttf",20, "000000");
+    $tipText = ImageWorkshop::initTextLayer($tText, "img/arial.ttf",26, "000000");
     $textGroup->addLayer(10, $tipText, 1800);
 }
 
@@ -162,7 +162,7 @@ if(isset($_REQUEST['final10'])) {
     }
 
     $fsText = " FINAL  S\n".strtoupper($finalS);
-    $finalSText = ImageWorkshop::initTextLayer($fsText, "img/arial.ttf",20, "000000");
+    $finalSText = ImageWorkshop::initTextLayer($fsText, "img/arial.ttf",26, "000000");
     $textGroup->addLayer(10, $finalSText, 1990);
 }
 
@@ -185,7 +185,7 @@ if(isset($_REQUEST['final16'])) {
     }
 
     $flText = " FINAL  L\n".strtoupper($finalL);
-    $finalLText = ImageWorkshop::initTextLayer($flText, "img/arial.ttf",20, "000000");
+    $finalLText = ImageWorkshop::initTextLayer($flText, "img/arial.ttf",26, "000000");
     $textGroup->addLayer(10, $finalLText, 2160);
 }
 
@@ -200,21 +200,21 @@ $document->addLayer(5, $impiantoLayer, 2193 + $offsetXGen, 465 + $offsetYGen);
 if(isset($_REQUEST['tissue']) && $_REQUEST['tissue'] == 1) {
     $tissueLayer = ImageWorkshop::initFromPath("img/PUNCH@4x.png");
     $document->addLayer(6, $tissueLayer, 110 + $offsetXGen, $tissueY + $offsetYGen);
-    $punchText = ImageWorkshop::initTextLayer("PUNCH", "img/arial.ttf",20, "000000");
+    $punchText = ImageWorkshop::initTextLayer("PUNCH", "img/arial.ttf",26, "000000");
     $textGroup->addLayer(10, $punchText, 255);
 }
 
 if(isset($_REQUEST['bone']) && $_REQUEST['bone'] == 1) {
     $boneLayer = ImageWorkshop::initFromPath("img/BONE_FLATTENER@4x.png");
     $document->addLayer(7, $boneLayer, 275 + $offsetXGen, $boneY + $offsetYGen);
-    $boneText = ImageWorkshop::initTextLayer("     BONE\nFLATTENER", "img/arial.ttf",20, "000000");
+    $boneText = ImageWorkshop::initTextLayer("     BONE\nFLATTENER", "img/arial.ttf",26, "000000");
     $textGroup->addLayer(10, $boneText, 400);
 }
 
 if(isset($_REQUEST['start']) && $_REQUEST['start'] == 1) {
     $startLayer = ImageWorkshop::initFromPath("img/START@4x.png");
     $document->addLayer(7, $startLayer, 442 + $offsetXGen, $startY + $offsetYGen);
-    $startText = ImageWorkshop::initTextLayer("START", "img/arial.ttf",20, "000000");
+    $startText = ImageWorkshop::initTextLayer("START", "img/arial.ttf",26, "000000");
     $textGroup->addLayer(10, $startText, 610);
 }
 
