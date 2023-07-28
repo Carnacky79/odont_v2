@@ -20,7 +20,7 @@ $apexText = ImageWorkshop::initTextLayer("Apex:          ".$_REQUEST['apex'], "i
 
 $diamText = ImageWorkshop::initTextLayer("Diametro:    ".$_REQUEST['diametro'], "img/arial_bold.ttf",20, "000000");
 
-$textGroupDesc = ImageWorkshop::initVirginLayer(200, 250, null);
+$textGroupDesc = ImageWorkshop::initVirginLayer(300, 250, null);
 
 $textGroupDesc->addLayer(1, $offsetText, 0, 20);
 $textGroupDesc->addLayer(1, $diamText, 0, 60);
@@ -42,7 +42,7 @@ foreach($pilots as $p){
 
 
     $pilotText = ImageWorkshop::initTextLayer("PILOT\n   ".$p, "img/arial.ttf",26, "000000");
-    $textGroup->addLayer($layerLevel++, $pilotText, $positionX + 790);
+    $textGroup->addLayer($layerLevel++, $pilotText, $positionX + 780);
 
     $positionX += 175;
 }
@@ -72,7 +72,7 @@ if($mountToggle == 1){
 
     $layerMount = ImageWorkshop::initFromPath($mountPath);
     $mountText = ImageWorkshop::initTextLayer($mText, "img/arial.ttf",26, "000000");
-    $textGroup->addLayer(10, $mountText, 2340);
+    $textGroup->addLayer(10, $mountText, 2320);
 }
 
 switch((int)$offset){
@@ -143,7 +143,7 @@ if(isset($_REQUEST['tip'])) {
 
     $tText = "      TIP\n".strtoupper($tip);
     $tipText = ImageWorkshop::initTextLayer($tText, "img/arial.ttf",26, "000000");
-    $textGroup->addLayer(10, $tipText, 1800);
+    $textGroup->addLayer(10, $tipText, 1780, 40);
 }
 
 if(isset($_REQUEST['final10'])) {
@@ -163,7 +163,7 @@ if(isset($_REQUEST['final10'])) {
 
     $fsText = " FINAL  S\n".strtoupper($finalS);
     $finalSText = ImageWorkshop::initTextLayer($fsText, "img/arial.ttf",26, "000000");
-    $textGroup->addLayer(10, $finalSText, 1990);
+    $textGroup->addLayer(10, $finalSText, 1970);
 }
 
 if(isset($_REQUEST['final16'])) {
@@ -186,7 +186,7 @@ if(isset($_REQUEST['final16'])) {
 
     $flText = " FINAL  L\n".strtoupper($finalL);
     $finalLText = ImageWorkshop::initTextLayer($flText, "img/arial.ttf",26, "000000");
-    $textGroup->addLayer(10, $finalLText, 2160);
+    $textGroup->addLayer(10, $finalLText, 2140, 40);
 }
 
 
@@ -201,21 +201,21 @@ if(isset($_REQUEST['tissue']) && $_REQUEST['tissue'] == 1) {
     $tissueLayer = ImageWorkshop::initFromPath("img/PUNCH@4x.png");
     $document->addLayer(6, $tissueLayer, 110 + $offsetXGen, $tissueY + $offsetYGen);
     $punchText = ImageWorkshop::initTextLayer("PUNCH", "img/arial.ttf",26, "000000");
-    $textGroup->addLayer(10, $punchText, 255);
+    $textGroup->addLayer(10, $punchText, 240, 120);
 }
 
 if(isset($_REQUEST['bone']) && $_REQUEST['bone'] == 1) {
     $boneLayer = ImageWorkshop::initFromPath("img/BONE_FLATTENER@4x.png");
     $document->addLayer(7, $boneLayer, 275 + $offsetXGen, $boneY + $offsetYGen);
     $boneText = ImageWorkshop::initTextLayer("     BONE\nFLATTENER", "img/arial.ttf",26, "000000");
-    $textGroup->addLayer(10, $boneText, 400);
+    $textGroup->addLayer(10, $boneText, 380, 40);
 }
 
 if(isset($_REQUEST['start']) && $_REQUEST['start'] == 1) {
     $startLayer = ImageWorkshop::initFromPath("img/START@4x.png");
     $document->addLayer(7, $startLayer, 442 + $offsetXGen, $startY + $offsetYGen);
     $startText = ImageWorkshop::initTextLayer("START", "img/arial.ttf",26, "000000");
-    $textGroup->addLayer(10, $startText, 610);
+    $textGroup->addLayer(10, $startText, 590);
 }
 
 if(isset($_REQUEST['tip']))
@@ -230,7 +230,7 @@ if(isset($_REQUEST['final16']))
 $document->addLayer(11, $layerOffset, 0 + $offsetXGen, $offsetY + $offsetYGen);
 $document->addLayer(20, $layerBase, $offsetXGen, $offsetYGen);
 $document->addLayer(30, $textGroup, 0, 80);
-$document->addLayer(30, $textGroupDesc, 0, 0, "RT");
+$document->addLayer(40, $textGroupDesc, 0, 0, "LT");
 
 $image = $document->getResult("ffffff");
 
@@ -247,7 +247,7 @@ $document->save($dirPath, $filename, $createFolders, $backgroundColor, $imageQua
 //header('Content-type: image/jpeg');
 
 //imagejpeg($image, null, 95); // We choose to show a JPEG with a quality of 95%
-header("location: download.php");
+//header("location: download.php");
 
 
 
