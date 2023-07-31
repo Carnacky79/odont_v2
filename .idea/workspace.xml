@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2aaff1eb-1df3-416f-8b10-bdf5916ebee9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/pref.txt" beforeDir="false" afterPath="$PROJECT_DIR$/db/pref.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docdownload.php" beforeDir="false" afterPath="$PROJECT_DIR$/docdownload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docview.php" beforeDir="false" afterPath="$PROJECT_DIR$/docview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/PILOT_10@4x.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/PILOT_10@4x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/PILOT_12@4x.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/PILOT_12@4x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/PILOT_14@4x.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/PILOT_14@4x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/PILOT_16@4x.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/PILOT_16@4x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/PILOT_6@4x.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/PILOT_6@4x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/PILOT_8@4x.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/PILOT_8@4x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tmp/ciao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/immagine.php" beforeDir="false" afterPath="$PROJECT_DIR$/immagine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/setasign/fpdi/src/Fpdi.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/setasign/fpdi/src/Fpdi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/setasign/fpdi/src/FpdiTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/setasign/fpdi/src/FpdiTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/setasign/fpdi/src/Tcpdf/Fpdi.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/setasign/fpdi/src/Tcpdf/Fpdi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/setasign/fpdi/src/Tfpdf/Fpdi.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/setasign/fpdi/src/Tfpdf/Fpdi.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/sybio/image-workshop" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/psr-log-aware-trait" />
+      <path value="$PROJECT_DIR$/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="2S6ItEOYfvFZvt5GlB4WIuccUTa" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "ignore_missing_gitignore": "true",
+    "last_opened_file_path": "C:/Apache24/htdocs/odont_2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Apache24\htdocs\odont_2\img\pref" />
+      <recent name="C:\Apache24\htdocs\odont_2" />
+      <recent name="C:\Apache24\htdocs\odont_2\image_create" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2aaff1eb-1df3-416f-8b10-bdf5916ebee9" name="Changes" comment="" />
+      <created>1688460816480</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688460816480</updated>
+      <workItem from="1688460818428" duration="1478000" />
+      <workItem from="1688651866823" duration="7284000" />
+      <workItem from="1688897496194" duration="4771000" />
+      <workItem from="1689065254530" duration="10413000" />
+      <workItem from="1689157479214" duration="657000" />
+      <workItem from="1689233455419" duration="25019000" />
+      <workItem from="1689672439135" duration="9754000" />
+      <workItem from="1689802863153" duration="5018000" />
+      <workItem from="1689921099444" duration="5887000" />
+      <workItem from="1690184478867" duration="4838000" />
+      <workItem from="1690357033350" duration="14014000" />
+      <workItem from="1690644027354" duration="1284000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

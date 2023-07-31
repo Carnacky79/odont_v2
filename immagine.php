@@ -1,6 +1,7 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
 session_start();
+require __DIR__ . '/vendor/autoload.php';
+
 /*
  * offset 9 - y 230
  * offset 10 - y 207
@@ -8,6 +9,7 @@ session_start();
  */
 use PHPImageWorkshop\ImageWorkshop;
 
+$_SESSION['paziente'] = $_REQUEST['paziente'];
 $lunghezza = $_REQUEST['lunghezza'];
 $lunghezzaText = ImageWorkshop::initTextLayer("Lunghezza: ".$lunghezza, "img/arial_bold.ttf",20, "000000");
 $impiantoPath = "img/impianto_" . (int)$lunghezza . "@4x.png";
@@ -42,7 +44,7 @@ foreach($pilots as $p){
 
 
     $pilotText = ImageWorkshop::initTextLayer("PILOT\n   ".$p, "img/arial.ttf",26, "000000");
-    $textGroup->addLayer($layerLevel++, $pilotText, $positionX + 780);
+    $textGroup->addLayer($layerLevel++, $pilotText, $positionX + 770);
 
     $positionX += 175;
 }
@@ -193,7 +195,7 @@ if(isset($_REQUEST['final16'])) {
 if(isset($mountToggle) && $mountToggle == 1)
     $document->addLayer(2, $layerMount, 2180 + $offsetXGen, 112 + $offsetYGen);
 
-$document->addLayer(4, $pilotGroup, 630 + $offsetXGen, $pilotY + $offsetYGen);
+$document->addLayer(4, $pilotGroup, 615 + $offsetXGen, $pilotY + $offsetYGen);
 
 $document->addLayer(5, $impiantoLayer, 2193 + $offsetXGen, 465 + $offsetYGen);
 
@@ -248,10 +250,10 @@ $imageQuality = 95; // useless for GIF, usefull for PNG and JPEG (0 to 100%)
 
 $document->save($dirPath, $filename, $createFolders, $backgroundColor, $imageQuality);
 
-header('Content-type: image/jpeg');
+//header('Content-type: image/jpeg');
 
 //imagejpeg($image, null, 95); // We choose to show a JPEG with a quality of 95%
-//header("location: download.php");
+header("location: download.php");
 
 
 

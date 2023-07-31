@@ -86,14 +86,19 @@ fclose($docFile);
                     <h4 style="margin-top: 20px; border-top: 1px solid black;padding-top: 15px">
                         <span style="font-variant: small-caps">Aggiungi Info e genera PDF</span>
                     </h4>
-                    <div class="form-row" style="margin-top:15px;">
-                        <div class="form-group col-lg-4 offset-lg-4">
+                    <hr style="border:1px solid black" />
+                    <?php
+                    if(!isset($_SESSION['paziente'])){
+                        echo <<<HTML
+<div class="form-row" style="margin-top: 10px; border-bottom: 1px solid black;padding-top: 5px;padding-bottom:10px;">
+                        <div class="form-group col-lg-4 offset-lg-4" style="padding-top:15px;">
                             <label for="paziente">Nome Paziente</label>
                             <input type="text" class="form-control" id="paziente" name="paziente" required="required">
                         </div>
                     </div>
-                    <hr style="border:1px solid black" />
-                    <?php
+HTML;
+
+                    }
 
                     $count = 0;
                     foreach ($files as $f){
