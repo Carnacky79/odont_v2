@@ -11,23 +11,23 @@ use PHPImageWorkshop\ImageWorkshop;
 
 $_SESSION['paziente'] = $_REQUEST['paziente'];
 $lunghezza = $_REQUEST['lunghezza'];
-$lunghezzaText = ImageWorkshop::initTextLayer("Lunghezza: ".$lunghezza, "img/arial_bold.ttf",20, "000000");
+$lunghezzaText = ImageWorkshop::initTextLayer("Lunghezza: ".$lunghezza, "img/arial_bold.ttf",26, "000000");
 $impiantoPath = "img/impianto_" . (int)$lunghezza . "@4x.png";
 $impiantoLayer = ImageWorkshop::initFromPath($impiantoPath);
 
 $offset = $_REQUEST['offset'];
-$offsetText = ImageWorkshop::initTextLayer("Offset:         ".$offset, "img/arial_bold.ttf",20, "000000");
+$offsetText = ImageWorkshop::initTextLayer("Offset:         ".$offset, "img/arial_bold.ttf",26, "000000");
 
-$apexText = ImageWorkshop::initTextLayer("Apex:          ".$_REQUEST['apex'], "img/arial_bold.ttf",20, "000000");
+$apexText = ImageWorkshop::initTextLayer("Apex:          ".$_REQUEST['apex'], "img/arial_bold.ttf",26, "000000");
 
-$diamText = ImageWorkshop::initTextLayer("Diametro:    ".$_REQUEST['diametro'], "img/arial_bold.ttf",20, "000000");
+$diamText = ImageWorkshop::initTextLayer("Diametro:    ".$_REQUEST['diametro'], "img/arial_bold.ttf",26, "000000");
 
 $textGroupDesc = ImageWorkshop::initVirginLayer(300, 250, null);
 
-$textGroupDesc->addLayer(1, $offsetText, 0, 20);
-$textGroupDesc->addLayer(1, $diamText, 0, 60);
-$textGroupDesc->addLayer(1, $apexText, 0, 100);
-$textGroupDesc->addLayer(1, $lunghezzaText, 0, 140);
+$textGroupDesc->addLayer(1, $offsetText, 0, 40);
+$textGroupDesc->addLayer(1, $diamText, 0, 80);
+$textGroupDesc->addLayer(1, $apexText, 0, 120);
+$textGroupDesc->addLayer(1, $lunghezzaText, 0, 160);
 
 $pilots = $_REQUEST['pilot'];
 
@@ -118,7 +118,7 @@ switch((int)$offset){
 
 $offsetXGen = 156;
 $offsetYGen = 274;
-$document = ImageWorkshop::initVirginLayer(2700, 1150, "ffffff");
+$document = ImageWorkshop::initVirginLayer(2700, 1450, "ffffff");
 
 $layerTessuto = ImageWorkshop::initFromPath("img/Tessuto_Gengivale@4x.png");
 
@@ -193,50 +193,50 @@ if(isset($_REQUEST['final16'])) {
 
 
 if(isset($mountToggle) && $mountToggle == 1)
-    $document->addLayer(2, $layerMount, 2180 + $offsetXGen, 112 + $offsetYGen);
+    $document->addLayer(2, $layerMount, 2180 + $offsetXGen, 112 + $offsetYGen + 300);
 
-$document->addLayer(4, $pilotGroup, 615 + $offsetXGen, $pilotY + $offsetYGen);
+$document->addLayer(4, $pilotGroup, 615 + $offsetXGen, $pilotY + $offsetYGen + 300);
 
-$document->addLayer(5, $impiantoLayer, 2193 + $offsetXGen, 465 + $offsetYGen);
+$document->addLayer(5, $impiantoLayer, 2193 + $offsetXGen, 465 + $offsetYGen + 300);
 
 if(isset($_REQUEST['tissue']) && $_REQUEST['tissue'] == 1) {
     $tissueLayer = ImageWorkshop::initFromPath("img/PUNCH@4x.png");
-    $document->addLayer(6, $tissueLayer, 110 + $offsetXGen, $tissueY + $offsetYGen);
+    $document->addLayer(6, $tissueLayer, 110 + $offsetXGen, $tissueY + $offsetYGen + 300);
     $punchText = ImageWorkshop::initTextLayer("PUNCH", "img/arial.ttf",26, "000000");
     $textGroup->addLayer(10, $punchText, 240, 120);
 }
 
 if(isset($_REQUEST['bone']) && $_REQUEST['bone'] == 1) {
     $boneLayer = ImageWorkshop::initFromPath("img/BONE_FLATTENER@4x.png");
-    $document->addLayer(7, $boneLayer, 275 + $offsetXGen, $boneY + $offsetYGen);
+    $document->addLayer(7, $boneLayer, 275 + $offsetXGen, $boneY + $offsetYGen + 300);
     $boneText = ImageWorkshop::initTextLayer("     BONE\nFLATTENER", "img/arial.ttf",26, "000000");
     $textGroup->addLayer(10, $boneText, 380, 40);
 }
 
 if(isset($_REQUEST['start']) && $_REQUEST['start'] == 1) {
     $startLayer = ImageWorkshop::initFromPath("img/START@4x.png");
-    $document->addLayer(7, $startLayer, 442 + $offsetXGen, $startY + $offsetYGen);
+    $document->addLayer(7, $startLayer, 442 + $offsetXGen, $startY + $offsetYGen + 300);
     $startText = ImageWorkshop::initTextLayer("START", "img/arial.ttf",26, "000000");
     $textGroup->addLayer(10, $startText, 590);
 }
 
 if(isset($_REQUEST['tip']))
-    $document->addLayer(8, $tipLayer, 1660 + $offsetXGen, $tipY + $offsetYGen);
+    $document->addLayer(8, $tipLayer, 1660 + $offsetXGen, $tipY + $offsetYGen + 300);
 
 if(isset($_REQUEST['final10']))
-    $document->addLayer(9, $finalSLayer, 1840 + $offsetXGen, $finalSY + $offsetYGen);
+    $document->addLayer(9, $finalSLayer, 1840 + $offsetXGen, $finalSY + $offsetYGen + 300);
 
 if(isset($_REQUEST['final16']))
-    $document->addLayer(10, $finalLLayer, 2020 + $offsetXGen, $finalLY + $offsetYGen);
+    $document->addLayer(10, $finalLLayer, 2020 + $offsetXGen, $finalLY + $offsetYGen + 300);
 
-$document->addLayer(11, $layerOffset, 0 + $offsetXGen, $offsetY + $offsetYGen);
-$document->addLayer(20, $layerBase, $offsetXGen, $offsetYGen);
-$document->addLayer(30, $textGroup, 0, 80);
-$document->addLayer(40, $textGroupDesc, 10, 0, "LT");
+$document->addLayer(11, $layerOffset, 0 + $offsetXGen, $offsetY + $offsetYGen + 300);
+$document->addLayer(20, $layerBase, $offsetXGen, $offsetYGen + 300);
+$document->addLayer(30, $textGroup, 0, 80 + 300);
+$document->addLayer(40, $textGroupDesc, 10, 0, "RT");
 
 $nomeImpianto = $_REQUEST['nomeimp'];
 $impiantoText = ImageWorkshop::initTextLayer("Impianto: ".strtoupper($nomeImpianto), "img/arial.ttf",30, "000000");
-$document->addLayer(40, $impiantoText, -($impiantoText->getWidth()/2), 10, "MT");
+$document->addLayer(40, $impiantoText, 30, 10 + 300, "LT");
 
 $image = $document->getResult("ffffff");
 
